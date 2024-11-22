@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Poem</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom right, #f8f0f4, #e6a1b3, #f8c9d6);
+            color: #5a2a47;
+            margin: 0;
+            padding: 0;
+            background-image: url('Cutedaw.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: #c84663;
+            animation: glow 2s infinite alternate ease-in-out;
+        }
+        p {
+            font-size: 20px;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 2s ease-in-out forwards;
+        }
+        p:nth-child(2) {
+            animation-delay: 1s;
+        }
+        p:nth-child(3) {
+            animation-delay: 2s;
+        }
+        p:nth-child(4) {
+            animation-delay: 3s;
+        }
+        .highlight {
+            color: #c84663;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 20px;
+            font-style: italic;
+            color: #80516b;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards 4s;
+        }
+
+        .spacer {
+            height: 100px;
+        }
+
+        .envelope {
+            margin-top: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .envelope:hover {
+            transform: scale(1.1);
+        }
+
+        .letter {
+            display: none;
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: letterAnimation 1s forwards;
+        }
+
+        .letter img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #c84663, 0 0 20px #c84663, 0 0 30px #e17091;
+            }
+            100% {
+                text-shadow: 0 0 20px #e17091, 0 0 30px #e6a1b3, 0 0 40px #ffc0cb;
+            }
+        }
+
+        @keyframes letterAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="spacer"></div>
+    <div class="container">
+        <h1>A Whisper of Forever</h1>
+        <p>
+            Beneath the <span class="highlight">starlit sky</span>, so vast and deep,<br>
+            Your eyes hold promises I wish to keep.<br>
+            A fleeting touch, a gentle sigh,<br>
+            You are my dream, my endless why.
+        </p>
+        <p>
+            The <span class="highlight">moonlight</span> dances upon your face,<br>
+            A glow that time cannot erase.<br>
+            With every breath, my heart does sing,<br>
+            Of love eternal, an endless spring.
+        </p>
+        <p>
+            In your embrace, the world stands still,<br>
+            A moment perfect, against my will.<br>
+            For even forever could never convey,<br>
+            The depth of love I feel each day.
+        </p>
+        <div class="footer">
+            Cary, always and forever.
+        </div>
+
+        <!-- Envelope to reveal or hide the letter -->
+        <div class="envelope" onclick="toggleLetter()">
+            <img src="https://img.icons8.com/ios/452/open-envelope.png" alt="Envelope" width="100px" />
+        </div>
+
+        <!-- Hidden Letter with Image -->
+        <div class="letter" id="letter">
+            <p>My Dearest Love,</p>
+            <p>Love ikaw lang permi ah, di gid ko magsasawa sa imo :* will always effort for you.</p>
+            <p>With all my love,</p>
+            <p>Your Love Cary</p>
+            <!-- Image inside the letter -->
+            <img src="Cutedaw1.gif" alt="Romantic Picture" />
+        </div>
+    </div>
+    <div class="spacer"></div>
+
+    <script>
+        // Function to toggle the visibility of the letter
+        function toggleLetter() {
+            var letter = document.getElementById('letter');
+            // Toggle the display of the letter
+            if (letter.style.display === 'block') {
+                letter.style.display = 'none';
+            } else {
+                letter.style.display = 'block';
+                letter.style.animation = 'letterAnimation 1s forwards'; // Reapply animation when opened
+            }
+        }
+    </script>
+</body>
+</html>
